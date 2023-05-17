@@ -50,30 +50,55 @@ const harryPotterStudents = [
 
 app.post("/break_student_wand", (req, res) => {
   // add your code here
+  // Justin
+  // {bloodStatus: "Muggle-Born"}
+  // bnreak all the wands of whoever is a muggle
+  // {wand: "Broken Wand"}
 });
 
 app.post("/change_student_pet", (req, res) => {
-  // add your code here
+  const indexOfStudentToUpdate = harryPotterStudents.find(
+    (student) => student.name === req.body.name
+  );
+  if (!indexOfStudentToUpdate) {
+    res.send("that student does not exist");
+  } else {
+    if (req.body.name) {
+      indexOfStudentToUpdate.name = req.body.name;
+      indexOfStudentToUpdate.pet = req.body.newPet;
+    }
+  }
+  res.send(`this is your updated pet: ${indexOfStudentToUpdate.pet}`);
 });
 
 app.post("/change_student_house", (req, res) => {
   // add your code here
+  // Ashley
+  // {name: "Hermione Granger", newHouse: "Hufflepuff"}
 });
 
 app.post("/delete_student", (req, res) => {
   // add your code here
+  // Dustin
+  // {name: "Neville Longbottom"}
+  // find him in the original array and delete him
 });
 
-app.post("/update_student", (req, res) => {
+app.put("/update_student", (req, res) => {
   // add your code here
+  // Daniel
+  // {name: "Luna Lovegood", newName:" Looney Lovegood"}
 });
 
 app.post("/create_student", (req, res) => {
   // add your code here
+  // MAx
+  // Cameron
 });
 
 app.get("/get_students", (req, res) => {
   // add your code here
+  res.json(harryPotterStudents);
 });
 
 app.listen(PORT, () => console.log(`Listening in on port ${PORT}`));
