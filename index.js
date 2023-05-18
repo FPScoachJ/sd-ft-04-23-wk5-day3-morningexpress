@@ -94,6 +94,8 @@ app.post("/change_student_pet", (req, res) => {
 
 app.post("/change_student_house", (req, res) => {
   // add your code here
+  // Ashley
+  // {name: "Hermione Granger", newHouse: "Hufflepuff"}
 });
 
 app.post("/delete_student", (req, res) => {
@@ -106,8 +108,10 @@ app.post("/delete_student", (req, res) => {
   console.log(harryPotterStudents);
 });
 
-app.post("/update_student", (req, res) => {
+app.put("/update_student", (req, res) => {
   // add your code here
+  // Daniel
+  // {name: "Luna Lovegood", newName:" Looney Lovegood"}
 });
 
 app.post("/create_student", (req, res) => {
